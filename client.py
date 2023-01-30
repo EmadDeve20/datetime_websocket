@@ -5,6 +5,9 @@ async def get_time():
     while True:
         async with websockets.connect("ws://localhost:9090") as websocket:
                 print(await websocket.recv())
-                # await asyncio.sleep(1)
+        await asyncio.sleep(1)
 
-asyncio.run(get_time())
+try:
+    asyncio.run(get_time())
+except KeyboardInterrupt:
+    pass
